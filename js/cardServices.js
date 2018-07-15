@@ -1,12 +1,12 @@
 /*
-    Production Demo - CardConnect's Hosted iFrame Tokenizer
+    Quick & Dirty Production Demo - CardConnect's Hosted iFrame Tokenizer
     Ash Craig, FirmPOS Software
 
     Use as you like. Hope it helps.
 
     @uses:  Bootstrap
-            jQuery
-            Font Awesome 4 
+    jQuery
+    Font Awesome 4
 */
 
 var DATA_TYPE;
@@ -100,9 +100,9 @@ var cardServices = {
         return defaultValue ? defaultValue : (false);
     },
     isNumeric : function(n){
-		var self = this;
-		return !isNaN(parseFloat(n)) && isFinite(n);
-	},
+        var self = this;
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    },
     parse : function(data){
         var self = this;
 
@@ -122,13 +122,13 @@ var cardServices = {
         var self = this;
 
         var style = '&css=input:focus{outline: none;}body{margin:0!important;}';
-            style = style + 'input{margin: 0px; padding: 12px 10px; font-size: 15px;';
-            style = style + 'font-family: arial; background-color: whitesmoke; border: none; width: 1000px;}';
+        style = style + 'input{margin: 0px; padding: 12px 10px; font-size: 15px;';
+        style = style + 'font-family: arial; background-color: whitesmoke; border: none; width: 1000px;}';
 
         var opts = '?invalidinputevent=true';
-            opts = opts + '&enhancedresponse=true';
-            opts = opts + '&formatinput=true';
-            opts = opts + style;
+        opts = opts + '&enhancedresponse=true';
+        opts = opts + '&formatinput=true';
+        opts = opts + style;
 
         var url = 'https://fts.cardconnect.com:6443/itoke/ajax-tokenizer.html' + opts;
 
@@ -153,53 +153,53 @@ var cardServices = {
         //pass the card info with token to simpulate add
         //you will want to have a customer profile created
         //or info to create one as you submit this data
-		var parm = {
-			"token" : token,
-			"exp" : exp,
-			"cvvc" : cvvc
-		}
+        var parm = {
+            "token" : token,
+            "exp" : exp,
+            "cvvc" : cvvc
+        }
 
-		//call sample response in PHP file
+        //call sample response in PHP file
         //but you can use whatever works for you
-		var data_url =  "service/";
+        var data_url =  "service/";
 
-		//show the working modal
-		self.working(true, "Adding Card...");
+        //show the working modal
+        self.working(true, "Adding Card...");
 
-		//do the ajax call
-		self.ajax(parm, data_url, function(data){
+        //do the ajax call
+        self.ajax(parm, data_url, function(data){
 
             self.working(false);
 
-			//if successful, the returned status will equal "success"
-		    if (data.status == "success") {
+            //if successful, the returned status will equal "success"
+            if (data.status == "success") {
 
                 $("#card_container").html($("#template_card_completed").html());
                 $("#myToken").remove();
                 $("#btn_submit").remove();
 
-		    } else {
+            } else {
 
-				//on error, you will receieve the msg
-				alert(data.msg);
-		    }
-		});
+                //on error, you will receieve the msg
+                alert(data.msg);
+            }
+        });
     },
-	working : function(toggle, msg=''){
-		var self = this;
+    working : function(toggle, msg=''){
+        var self = this;
 
         if (msg == '') {
             msg='working...';
         }
 
-		if (toggle == true) {
-			$("#_working")
-                .text(msg)
-                .show();
-		} else {
-			$("#_working").fadeOut();
-		}
-	}
+        if (toggle == true) {
+            $("#_working")
+            .text(msg)
+            .show();
+        } else {
+            $("#_working").fadeOut();
+        }
+    }
 }
 
 $(function(){
