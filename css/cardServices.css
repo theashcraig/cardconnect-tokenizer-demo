@@ -1,0 +1,113 @@
+input:focus {
+    outline: none;
+}
+
+#_working {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(39, 39, 39, 0.94);
+    text-align: center;
+    font-size: 53px;
+    line-height: 40px;
+    margin: 0;
+    padding: 50px 0;
+    color: #ffffff;
+    z-index: 5000000;
+    font-family: "helvetica neue", helvetica, arial;
+    font-weight: lighter;
+    letter-spacing: 0px;
+}
+
+#tokenframe {
+    height: 45px;
+    width: 100%;
+}
+#myToken {
+    margin: 0;
+    padding: 15px 0px;
+    color: #929292;
+    position:relative;
+}
+#myToken::before {
+    position: absolute;
+    content: 'token';
+    top: 3px;
+    font-size: 10px;
+    color: #b9b9b9;
+}
+.cd-container {
+    position: relative;
+    margin: 50px auto 0;
+    max-width: 500px;
+    width: 100%;
+    min-width: 200px;
+    border: 1px solid #e6e6e6;
+    min-height: 200px;
+    padding: 34px;
+    background-color: #fff;
+    border-radius: 9px;
+    box-shadow: 2px 2px 0px 0px #e6e6e6;
+    overflow: hidden;
+}
+.cd-button-container {
+    margin: 15px auto;
+    max-width: 500px;
+    width: 100%;
+    min-width: 200px;
+    padding: 0px 0px;
+}
+.cd-title {
+    display: block;
+    min-width: 120px;
+    position: relative;
+}
+.cd-title-label {
+    font-size: 12px;
+}
+.cd-field {
+    display: block;
+}
+.cd-input {
+    margin: 0px 0 7px 0;
+    padding: 9px 10px;
+    font-size: 15px;
+    font-family: arial;
+    background-color: #f5f5f5;
+    border: none;
+}
+.cd-err-row {
+    margin: -7px 0 11px 0;
+    padding: 5px 9px;
+    background-color: #ff2f2f1f;
+    font-size: 12px;
+    color: #de0000;
+}
+button {
+    cursor:pointer;
+}
+.cc-logo {
+    position: absolute;
+    right: 33px;
+    bottom: 0px;
+    font-size: 90px;
+    color: #929292;
+}
+.card-completed {
+    min-height: 202px;
+}
+@media screen and (max-width: 500px) {
+    .cd-container {
+        border: none;
+        box-shadow: none;
+        margin: 0px auto 0;
+    }
+    .cc-logo {
+        display: none;
+    }
+    .button-row {
+        margin: 0 35px;
+    }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Demo - Hosted iFrame Tokenizer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/tether.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/cardServices.css">
+    <style media="screen">
+
+        #_working {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(39, 39, 39, 0.94);
+            text-align: center;
+            font-size: 53px;
+            line-height: 40px;
+            margin: 0;
+            padding: 50px 0;
+            color: #ffffff;
+            z-index: 5000000;
+            font-family: "helvetica neue", helvetica, arial;
+            font-weight: lighter;
+            letter-spacing: 0px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+    </style>
+</head>
+<body >
+    <div id="card_container" class="cd-container">
+        <div class="cc-logo">
+            <i class="fa fa-credit-card"></i>
+        </div>
+        <div id="_working">Working...</div>
+        <div class="cd-row">
+            <div class="cd-title">
+                <div class="cd-title-label">
+                    Card Number
+                </div>
+            </div>
+            <div class="cd-field">
+                <iframe id="tokenframe" name="tokenframe" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+        <div id="cc_error" class="cd-err-row hidden">
+            Please enter a valid credit card number
+        </div>
+        <div class="cd-row">
+            <div class="cd-title">
+                <div class="cd-title-label">
+                    Expiration <small>(mmyy)</small>
+                </div>
+            </div>
+            <div class="cd-field">
+                <input id="exp" class="cd-input" type="text">
+            </div>
+        </div>
+        <div class="cd-row">
+            <div class="cd-title">
+                <div class="cd-title-label">
+                    CVVC
+                </div>
+            </div>
+            <div class="cd-field">
+                <input id="cvvc" class="cd-input" type="text">
+            </div>
+        </div>
+    </div>
+    <div class="cd-button-container">
+        <div class="cd-row button-row">
+            <button id="btn_submit" type="button" class="btn btn-primary btn-lg btn-block">Add Credit Card</button>
+        </div>
+    </div>
+    <div class="cd-button-container">
+        <div class="cd-row button-row">
+            <div id="myToken"></div>
+        </div>
+    </div>
+
+    <script id="template_card_completed" type="text/template">
+        <div class="card-completed">
+            Card was added.
+        </div>
+    </script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/tether.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/cardServices.js"></script>
+
+</body>
+</html>
